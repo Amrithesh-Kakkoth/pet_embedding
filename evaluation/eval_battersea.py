@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 """Evaluate pet embedding models on Battersea Pets dataset.
 
 Uses the full pipeline (face detection + alignment + ONNX embedding) to test
@@ -12,10 +15,8 @@ Usage:
 
 import argparse
 import json
-import sys
 import cv2
 import numpy as np
-from pathlib import Path
 from collections import defaultdict
 
 sys.path.insert(0, "/root/pipeline")

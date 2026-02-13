@@ -1,5 +1,9 @@
 """Resume MobileFaceNet training from checkpoint"""
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import os
 import json
 import random
@@ -12,8 +16,8 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 import numpy as np
 
-from mobilefacenet import MobileFaceNet
-from dataset import load_dataset, PetFaceDataset, get_train_transforms, get_val_transforms
+from src.mobilefacenet import MobileFaceNet
+from src.dataset import load_dataset, PetFaceDataset, get_train_transforms, get_val_transforms
 
 
 class ArcFaceHead(nn.Module):

@@ -6,8 +6,11 @@ Architecture: Pure MobileFaceNet (not MobileNetV3)
 Loss: ArcFace
 """
 
-import os
 import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+import os
 import json
 import time
 import random
@@ -24,8 +27,8 @@ from torch.optim import AdamW
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from tqdm import tqdm
 
-from mobilefacenet import MobileFaceNetWithArcFace
-from dataset import load_dataset, PetFaceDataset, get_train_transforms, get_val_transforms
+from src.mobilefacenet import MobileFaceNetWithArcFace
+from src.dataset import load_dataset, PetFaceDataset, get_train_transforms, get_val_transforms
 
 
 def set_seed(seed):

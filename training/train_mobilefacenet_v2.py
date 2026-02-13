@@ -1,5 +1,9 @@
 """MobileFaceNet training with ArcFace - Fixed version with proper training"""
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import os
 import json
 import random
@@ -15,8 +19,8 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 from tqdm import tqdm
 import numpy as np
 
-from mobilefacenet import MobileFaceNet
-from dataset import load_dataset, PetFaceDataset, get_train_transforms, get_val_transforms
+from src.mobilefacenet import MobileFaceNet
+from src.dataset import load_dataset, PetFaceDataset, get_train_transforms, get_val_transforms
 
 
 class ArcFaceHead(nn.Module):

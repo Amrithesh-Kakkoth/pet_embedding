@@ -28,7 +28,7 @@ echo "Found ~$NUM_IDS dog identities"
 echo ""
 
 # Run training
-python train.py \
+python training/train.py \
     --data-dir "$DATA_DIR" \
     --output-dir "$OUTPUT_DIR" \
     --epochs "$EPOCHS" \
@@ -39,5 +39,5 @@ echo "=== Training Complete ==="
 echo "Models saved to: $OUTPUT_DIR"
 echo ""
 echo "Next steps:"
-echo "  1. Export for mobile: python export_mobile.py --checkpoint $OUTPUT_DIR/pet_embedder.pt"
-echo "  2. Use in inference: see inference.py"
+echo "  1. Export for mobile: python deploy/export_mobile.py --checkpoint $OUTPUT_DIR/pet_embedder.pt"
+echo "  2. Use in inference: see deploy/inference.py"

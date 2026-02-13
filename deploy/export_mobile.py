@@ -1,12 +1,15 @@
 """Export pet embedder model for mobile deployment."""
 
-import argparse
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+import argparse
 
 import torch
 import torch.nn as nn
 
-from model import PetFaceEmbedder
+from src.model import PetFaceEmbedder
 
 
 def export_onnx(

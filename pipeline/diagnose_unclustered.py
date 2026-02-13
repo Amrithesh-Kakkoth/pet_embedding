@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 """Diagnose unclustered images: check face detection quality."""
 
-import sys
 import cv2
 import json
 import numpy as np
-from pathlib import Path
 from collections import defaultdict
 
 sys.path.insert(0, "/root/pipeline")

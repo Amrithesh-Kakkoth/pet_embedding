@@ -1,5 +1,9 @@
 """Training script for pet face embedding model."""
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import argparse
 import json
 import time
@@ -11,9 +15,9 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from config import Config
-from model import PetFaceModel
-from dataset import (
+from src.config import Config
+from src.model import PetFaceModel
+from src.dataset import (
     load_dataset,
     create_dataloaders,
     PairDataset,

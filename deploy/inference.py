@@ -1,14 +1,17 @@
 """Inference pipeline for pet face recognition."""
 
-import json
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+import json
 
 import numpy as np
 import torch
 import torch.nn.functional as F
 from PIL import Image
 
-from model import PetFaceEmbedder
+from src.model import PetFaceEmbedder
 
 
 class PetRecognitionPipeline:

@@ -139,7 +139,7 @@ class PetFaceEmbedder(nn.Module):
 
         # MobileFaceNet is a complete embedder (has its own head + L2 norm)
         if backbone == "mobilefacenet":
-            from mobilefacenet import MobileFaceNet
+            from src.mobilefacenet import MobileFaceNet
             self._is_mobilefacenet = True
             self.backbone = MobileFaceNet(
                 embedding_dim=embedding_dim,

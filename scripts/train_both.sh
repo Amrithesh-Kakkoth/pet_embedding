@@ -12,7 +12,7 @@ cd ~/pet_embedding
 echo "============================================"
 echo "  Training Cat Embedding Model"
 echo "============================================"
-python train.py \
+python training/train.py \
     --data-dir ~/cat_aligned \
     --output-dir outputs_cat \
     --backbone mobilenetv3_small_100 \
@@ -25,7 +25,7 @@ echo ""
 echo "============================================"
 echo "  Training Dog Embedding Model"
 echo "============================================"
-python train.py \
+python training/train.py \
     --data-dir ~/dog_aligned \
     --output-dir outputs_dog \
     --backbone mobilenetv3_small_100 \

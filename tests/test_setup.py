@@ -2,6 +2,7 @@
 
 import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 def test_imports():
     """Test all imports work."""
@@ -20,7 +21,7 @@ def test_imports():
 def test_model():
     """Test model creation."""
     print("\nTesting model...")
-    from model import PetFaceEmbedder, PetFaceModel
+    from src.model import PetFaceEmbedder, PetFaceModel
     import torch
 
     # Test embedder
@@ -45,7 +46,7 @@ def test_model():
 def test_dataset(data_dir: Path, num_samples: int = 10):
     """Test dataset loading."""
     print(f"\nTesting dataset from {data_dir}...")
-    from dataset import load_dataset, PetFaceDataset, get_train_transforms
+    from src.dataset import load_dataset, PetFaceDataset, get_train_transforms
     import torch
 
     # Load a small subset
@@ -83,8 +84,8 @@ def test_training_step(data_dir: Path):
     print("\nTesting training step...")
     import torch
     import torch.nn as nn
-    from model import PetFaceModel
-    from dataset import load_dataset, PetFaceDataset, get_train_transforms
+    from src.model import PetFaceModel
+    from src.dataset import load_dataset, PetFaceDataset, get_train_transforms
 
     # Get device
     if torch.backends.mps.is_available():
@@ -133,7 +134,7 @@ def test_inference():
     """Test inference pipeline components."""
     print("\nTesting inference components...")
     import torch
-    from model import PetFaceEmbedder
+    from src.model import PetFaceEmbedder
     import torch.nn.functional as F
 
     embedder = PetFaceEmbedder(embedding_dim=128)

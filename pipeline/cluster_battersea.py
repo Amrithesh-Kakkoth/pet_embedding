@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 """Cluster Battersea pet images by embedding similarity.
 
 Detects faces, computes embeddings, clusters by identity using HDBSCAN,
@@ -13,10 +16,8 @@ Usage:
 import argparse
 import json
 import shutil
-import sys
 import cv2
 import numpy as np
-from pathlib import Path
 from collections import defaultdict
 
 sys.path.insert(0, "/root/pipeline")

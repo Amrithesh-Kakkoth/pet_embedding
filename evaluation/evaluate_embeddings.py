@@ -4,11 +4,14 @@ Evaluates pet face embedding models on retrieval, clustering, ranking,
 robustness, and visualization benchmarks.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import argparse
 import io
 import json
 import random
-from pathlib import Path
 
 import numpy as np
 import torch
@@ -28,9 +31,9 @@ from sklearn.metrics import (
 )
 from scipy.stats import spearmanr
 
-from config import Config
-from model import PetFaceModel, PetFaceEmbedder
-from dataset import load_dataset, get_val_transforms
+from src.config import Config
+from src.model import PetFaceModel, PetFaceEmbedder
+from src.dataset import load_dataset, get_val_transforms
 
 
 # ---------------------------------------------------------------------------

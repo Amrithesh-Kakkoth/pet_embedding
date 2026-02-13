@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 """Cluster mixed cat+dog images from a single flat directory.
 
 Detects faces with YOLOv5 (which outputs class: 0=cat, 1=dog),
@@ -14,10 +17,8 @@ Usage:
 import argparse
 import json
 import shutil
-import sys
 import cv2
 import numpy as np
-from pathlib import Path
 from collections import defaultdict
 
 sys.path.insert(0, "/root/pipeline")
