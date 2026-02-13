@@ -1,0 +1,38 @@
+# Model outputs and checkpoints
+outputs/
+outputs_*/
+
+# Evaluation results
+eval_*/
+
+# Battersea clustering results
+battersea_*/
+
+# Training logs
+*.log
+
+# Generated plots
+*.png
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+*.env
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
